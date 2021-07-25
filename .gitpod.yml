@@ -1,10 +1,10 @@
 # List the start up tasks. Learn more https://www.gitpod.io/docs/config-start-tasks/
 tasks:
-  - init: yarn create redwood-app my-redwood-app # runs during prebuild
-  - command: mv my-redwood-app/* my-redwood-app/.[!.]* ^.
-  - command: rm -rf my-redwood-app
-  - command: git add .gitignore
-  - command: yarn rw dev
+  - init: |
+      yarn create redwood-app my-redwood-app
+      mv my-redwood-app/* my-redwood-app/.[!.]* .
+      rm -rf my-redwood-app
+    command: yarn rw dev
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
 ports:
